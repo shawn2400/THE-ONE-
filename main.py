@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 import json
 import os
 
-app = Flask(__name__)
+app = Flask(_name_)
 
 @app.route('/')
 def home():
