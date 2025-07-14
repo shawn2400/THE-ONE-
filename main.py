@@ -1,6 +1,5 @@
 from flask import Flask, jsonify
 import json
-import os
 
 app = Flask(_name_)
 
@@ -18,5 +17,4 @@ def live():
         return "live.json not found", 404
 
 if _name_ == '_main_':
-    print("🔗 Proxy is running...")
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=10000)
