@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 import json
 import os
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 @app.route('/')
 def home():
@@ -17,6 +17,8 @@ def live():
     except FileNotFoundError:
         return "live.json not found", 404
 
-if _name_ == "_main_":
+if __name__ == "__main__":
+    app.run()
+
     print("🔗 Proxy is running at: https://" + os.environ.get("REPL_SLUG", "your-url") + "." + os.environ.get("REPL_OWNER", "your-user") + ".repl.co/live")
     app.run(host='0.0.0.0', port=10000)
