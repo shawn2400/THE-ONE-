@@ -2,11 +2,11 @@ from flask import Flask, jsonify
 import json
 import os
 
-app = Flask(__name__)
+app = Flask(_name_)
 
 @app.route('/')
 def home():
-    return "🔧 Flask proxy is running!"
+    return "✅ Flask proxy is running!"
 
 @app.route('/live')
 def live():
@@ -15,9 +15,8 @@ def live():
             data = json.load(f)
         return jsonify(data)
     except FileNotFoundError:
-        return "live.json not found", 404
+        return "❌ live.json not found", 404
 
-if _name_ == '_main_':
-    print("🔗 Proxy is running...")
-    app.run(host='0.0.0.0', port=5000)
+if _name_ == "_main_":
+    app.run(host="0.0.0.0", port=10000)
 
